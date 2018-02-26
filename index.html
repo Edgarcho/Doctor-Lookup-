@@ -10,17 +10,40 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4">Doctor Lookup</h1>
-        <p class="lead">An application that help you find local doctors that can help you with your medical issue or if you are just looking for a new doctor.</p>
+        <p class="lead">An application that will help you find a doctor based on name or symptom.</p>
       </div>
     </div>
-      <form id="searchForm">
-        <label for ="userInput">Enter either by name or medical issue:</label>
-        <input id="userInput" type="text"><br>
-        <button class="btn btn-info" type="submit">Submit</button>
-      </form></br>
-      <div id="result">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <form id="searchForm">
+            <div class="form-group">
+              <label for ="userInput">Enter first name or symptom:</label>
+              <input id="userInput" class="form-control" type="text">
+            </div>
+            <lable for ="radioOption">Select any option below to limited number of choices:</label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="operator" value="name" checked>
+                Search by name
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="operator" value="issue">
+                Search by symptom
+              </label>
+            </div>
+            <button class="btn btn-info" type="submit">Submit</button>
+          </form>
+          <br>
+          <br>
+          <div id="result">
+          </div>
+          <div id="errors">
+          </div>
+        </div>
       </div>
-      <div id="errors">
-      </div>
-    </body>
+    </div>
+  </body>
 </html>
