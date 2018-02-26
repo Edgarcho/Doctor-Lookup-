@@ -11,15 +11,15 @@ $(document).ready(function(){
         format: 'json'
       },
       success: function(response) {
+        $('#result').append(`<ul><li>First Name: ${response.data[0].profile.first_name}</li></ul>`);
+        $('#result').append(`<ul><li>Last Name: ${response.data[0].profile.last_name}</li></ul>`);
+        $('#result').append(`<ul><li>Address: ${response.data[0].visit_address.street}</li></ul>`);
+        $('#result').append(`<ul><li>City: ${response.data[0].visit_address.city}</li></ul>`);
+        $('#result').append(`<ul><li>State: ${response.data[0].visit_address.state}</li></ul>`);
+        $('#result').append(`<ul><li>Zip: ${response.data[0].visit_address.zip}</li></ul>`);
+        $('#result').append(`<ul><li>Phone Number: ${response.data[0].practices[0].phones[0].number}</li></ul>`);
+        $('#result').append(`<ul><li>accepts_new_patients: ${response.data[0].practices[0].phones[0].number}</li></ul>`);
         console.log(response);
-        console.log(response.data[0].profile.first_name);
-        console.log(response.data[0].profile.last_name);
-        console.log(response.data[0].practices[0].visit_address.street);
-        console.log(response.data[0].practices[0].visit_address.city);
-        console.log(response.data[0].practices[0].visit_address.state);
-        console.log(response.data[0].practices[0].visit_address.zip);
-        console.log(response.data[0].practices[0].phones[0].number);
-        console.log(response.data[0].practices[0].accepts_new_patients);
       },
       error: function(){
         $('#errors').text("There was an error processing your request. Please try again.");
