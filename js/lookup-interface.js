@@ -9,19 +9,25 @@ $(document).ready(function(){
 
     searchResult.then(function(response) {
       let body = JSON.parse(response);
+      debugger;
+      console.log(body);
       for (let i = 0; i < body.data.length; i++){
         if(body.data.length === 0){
           $('#results').text(`<h3>No doctors meet the search citeria</h3>`);
         }else{
-          $('#result').append(`<ul><li>First Name: ${response.data[i].profile.first_name}</li></ul>`);
-          $('#result').append(`<ul><li>Last Name: ${response.data[i].profile.last_name}</li></ul>`);
-          $('#result').append(`<ul><li>Address: ${response.data[i].practices.visit_address.street}, ${response.data[i].practices.visit_address.city}, ${response.data[i].practices.visit_address.state}, ${response.data[i].practices.visit_address.zip}</li></ul>`);
-          $('#result').append(`<ul><li>Phone Number: ${response.data[i].practices.phones.number}</li></ul>`);
-          $('#result').append(`<ul><li>Accepts new patients: ${response.data[i].practices.accepts_new_patients}</li></ul><br>`);
+          $('#results').append(`<ul><li>First Name: ${body.data[i].profile.first_name}</li></ul>`);
+          $('#results').append(`<ul><li>Last Name: ${body.data[i].profile.last_name}</li></ul>`);
+          $('#results').append(`<ul><li>Address: ${body.data[i].practices[0].visit_address.street},
+            ${body.data[i].practices[0].visit_address.city},
+            ${body.data[i].practices[0].visit_address.state},
+            ${body.data[i].practices[0].visit_address.zip}</li></ul>`);
+          $('#results').append(`<ul><li>Phone Number: ${body.data[i].practices[0].phones[0].number}</li></ul>`);
+          $('#results').append(`<ul><li>Phone Number: ${body.data[i].practices[0].website}</li></ul>`); //some might not have website
+          $('#results').append(`<ul><li>Accepts new patients: ${body.data[i].practices[0].accepts_new_patients}</li></ul><br>`); //return true or false
         }
       }
     }, function(error){
-      $('#error').text(`There was an error processing your request: ${error.message}`);
+      $('#errors').text(`There was an error processing your request: ${error.message}`);
     });
   });
 });
