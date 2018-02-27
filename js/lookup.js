@@ -1,4 +1,4 @@
-let LookupModule = function () {
+/*let LookupModule = function () {
 
 }
 
@@ -45,3 +45,4 @@ ApplicationModule.prototype.getData = function(userInput, displayData) {
 }
 
 exports.applicationModule = ApplicationModule;
+*/
