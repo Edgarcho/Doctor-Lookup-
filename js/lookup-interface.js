@@ -6,8 +6,8 @@ $(document).ready(function(){
     event.preventDefault();
     let searchInput = $('#userInput').val();
     let operator = $('input:radio[name=operator]:checked').val();
-    console.log(searchInput);
-    console.log(operator);
+
+    let result = searchApi(searchInput, operator);
     lookupModule.getData(userInput);
 
 
