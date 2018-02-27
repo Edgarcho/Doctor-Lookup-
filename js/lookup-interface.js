@@ -19,8 +19,9 @@ $(document).ready(function(){
           $('#result').append(`<ul><li>Phone Number: ${response.data[i].practices.phones.number}</li></ul>`);
           $('#result').append(`<ul><li>Accepts new patients: ${response.data[i].practices.accepts_new_patients}</li></ul><br>`);
         }
-      }, function(error){
-        $('#error').text(`There was an error processing your request: ${error.message}`);
-      });
+      }
+    }, function(error){
+      $('#error').text(`There was an error processing your request: ${error.message}`);
     });
   });
+});
