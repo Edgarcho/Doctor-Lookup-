@@ -1,1 +1,37 @@
-
+body {
+  background-color: #ffc844;
+}
+h1{
+  font-family: Georgia, serif;
+  font-size: 20px;
+}
+p{
+  font-family: serif;
+  font-size: 15px;
+}
+#searchForm{
+  color: #47494c;
+  font-family: serif;
+  font-size: 25px;
+}
+#errors{
+  color: #4ad100;
+  font-size: 60px;
+  font-style: italic;
+  text-align: center;
+}
+.table{
+  font-family: serif;
+  font-size: 28px;
+  padding: 30px;
+  background-color: #eeeeee;
+}
+.tableResults{
+  color: #ff6d6d;
+}
+#errors{
+  color: #4ad100;
+  font-size: 30px;
+  font-style: italic;
+  text-align: center;
+}

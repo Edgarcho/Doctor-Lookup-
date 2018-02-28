@@ -24,7 +24,6 @@ $(document).ready(function(){
              ${body.data[i].practices[0].visit_address.state},
              ${body.data[i].practices[0].visit_address.zip}</td>
             <td>${body.data[i].practices[0].phones[0].number}</td>
-            <td>${body.data[i].practices[0].website}</td>
             <td>${body.data[i].practices[0].accepts_new_patients}</td>
             </tr>
             </tbody>`);
