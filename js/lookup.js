@@ -34,4 +34,4 @@ export let searchApi = function(searchInput, operator) {
         request.send();
       });
     }
-  };
+};

@@ -16,6 +16,7 @@ $(document).ready(function(){
         $('#errors').append(`<h3>No doctors meet the search citeria</h3>`);
       }else{
         for(let i = 0; i < body.data.length; i++){
+          console.log(body.data[i]);
           $('#result, table').append(`<tbody class=tableResults>
             <tr>
             <td>${body.data[i].profile.first_name}</td>
